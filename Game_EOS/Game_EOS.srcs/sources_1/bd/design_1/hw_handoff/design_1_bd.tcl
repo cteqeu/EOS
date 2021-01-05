@@ -168,8 +168,8 @@ proc create_root_design { parentCell } {
   set sh_cp_0 [ create_bd_port -dir O sh_cp_0 ]
   set st_cp_0 [ create_bd_port -dir O st_cp_0 ]
 
-  # Create instance: MATRIX_IPBLOK_DEF_0, and set properties
-  set MATRIX_IPBLOK_DEF_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:MATRIX_IPBLOK_DEF:1.0 MATRIX_IPBLOK_DEF_0 ]
+  # Create instance: Matrix_0, and set properties
+  set Matrix_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Matrix:1.0 Matrix_0 ]
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -208,9 +208,6 @@ proc create_root_design { parentCell } {
    CONFIG.USE_RESET {false} \
    CONFIG.USE_SAFE_CLOCK_STARTUP {false} \
  ] $clk_wiz_0
-
-  # Create instance: my_rotary_en_0, and set properties
-  set my_rotary_en_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:my_rotary_en:1.0 my_rotary_en_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -741,6 +738,9 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_MI {3} \
  ] $ps7_0_axi_periph
 
+  # Create instance: rotary_encoder_0, and set properties
+  set rotary_encoder_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:rotary_encoder:1.0 rotary_encoder_0 ]
+
   # Create instance: rst_ps7_0_50M, and set properties
   set rst_ps7_0_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_50M ]
 
@@ -748,24 +748,24 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins MATRIX_IPBLOK_DEF_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins my_rotary_en_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins Matrix_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins rotary_encoder_0/S00_AXI]
 
   # Create port connections
-  connect_bd_net -net MATRIX_IPBLOK_DEF_0_ds [get_bd_ports ds_0] [get_bd_pins MATRIX_IPBLOK_DEF_0/ds]
-  connect_bd_net -net MATRIX_IPBLOK_DEF_0_sh_cp [get_bd_ports sh_cp_0] [get_bd_pins MATRIX_IPBLOK_DEF_0/sh_cp]
-  connect_bd_net -net MATRIX_IPBLOK_DEF_0_st_cp [get_bd_ports st_cp_0] [get_bd_pins MATRIX_IPBLOK_DEF_0/st_cp]
-  connect_bd_net -net a_i_0_1 [get_bd_ports a_i_0] [get_bd_pins my_rotary_en_0/a_i]
-  connect_bd_net -net b_i_0_1 [get_bd_ports b_i_0] [get_bd_pins my_rotary_en_0/b_i]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins MATRIX_IPBLOK_DEF_0/clk_10Mhz] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net clk_wiz_0_locked [get_bd_pins MATRIX_IPBLOK_DEF_0/reset] [get_bd_pins clk_wiz_0/locked] [get_bd_pins my_rotary_en_0/reset_i]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins MATRIX_IPBLOK_DEF_0/s00_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins my_rotary_en_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+  connect_bd_net -net Matrix_0_ds [get_bd_ports ds_0] [get_bd_pins Matrix_0/ds]
+  connect_bd_net -net Matrix_0_sh_cp [get_bd_ports sh_cp_0] [get_bd_pins Matrix_0/sh_cp]
+  connect_bd_net -net Matrix_0_st_cp [get_bd_ports st_cp_0] [get_bd_pins Matrix_0/st_cp]
+  connect_bd_net -net Net [get_bd_pins Matrix_0/reset] [get_bd_pins clk_wiz_0/locked] [get_bd_pins rotary_encoder_0/reset_i]
+  connect_bd_net -net a_i_0_1 [get_bd_ports a_i_0] [get_bd_pins rotary_encoder_0/a_i]
+  connect_bd_net -net b_i_0_1 [get_bd_ports b_i_0] [get_bd_pins rotary_encoder_0/b_i]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins Matrix_0/clk_10Mhz] [get_bd_pins clk_wiz_0/clk_out1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins Matrix_0/s00_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rotary_encoder_0/s00_axi_aclk] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins MATRIX_IPBLOK_DEF_0/s00_axi_aresetn] [get_bd_pins my_rotary_en_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins Matrix_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rotary_encoder_0/s00_axi_aresetn] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
 
   # Create address segments
-  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs MATRIX_IPBLOK_DEF_0/S00_AXI/S00_AXI_reg] -force
-  assign_bd_address -offset 0x43C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs my_rotary_en_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs Matrix_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs rotary_encoder_0/S00_AXI/S00_AXI_reg] -force
 
 
   # Restore current instance

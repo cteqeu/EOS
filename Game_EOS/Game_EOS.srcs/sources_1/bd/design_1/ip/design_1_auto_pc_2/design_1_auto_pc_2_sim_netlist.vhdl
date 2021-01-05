@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Wed Dec 30 17:07:23 2020
 -- Host        : DESKTOP-98J7JVM running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_auto_pc_2 -prefix
+--               design_1_auto_pc_2_ design_1_auto_pc_2_sim_netlist.vhdl
 -- Design      : design_1_auto_pc_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -143,8 +143,6 @@ entity design_1_auto_pc_2_axi_protocol_converter_v2_1_21_axi_protocol_converter 
   attribute C_TRANSLATION_MODE of design_1_auto_pc_2_axi_protocol_converter_v2_1_21_axi_protocol_converter : entity is 2;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_1_auto_pc_2_axi_protocol_converter_v2_1_21_axi_protocol_converter : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_2_axi_protocol_converter_v2_1_21_axi_protocol_converter : entity is "axi_protocol_converter_v2_1_21_axi_protocol_converter";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of design_1_auto_pc_2_axi_protocol_converter_v2_1_21_axi_protocol_converter : entity is 1;
   attribute P_AXI4 : integer;

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Wed Dec 30 18:13:12 2020
+| Date             : Tue Jan  5 14:25:24 2021
 | Host             : DESKTOP-98J7JVM running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -54,12 +54,12 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.004 |        7 |       --- |             --- |
 | Slice Logic             |     0.002 |     4190 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1416 |     14400 |            9.83 |
+|   LUT as Logic          |     0.002 |     1417 |     14400 |            9.84 |
 |   Register              |    <0.001 |     1962 |     28800 |            6.81 |
 |   CARRY4                |    <0.001 |       76 |      4400 |            1.73 |
 |   LUT as Shift Register |    <0.001 |      121 |      6000 |            2.02 |
 |   Others                |     0.000 |      218 |       --- |             --- |
-| Signals                 |     0.003 |     3048 |       --- |             --- |
+| Signals                 |     0.003 |     3046 |       --- |             --- |
 | MMCM                    |     0.105 |        1 |         2 |           50.00 |
 | I/O                     |    <0.001 |        5 |        54 |            9.26 |
 | PS7                     |     1.178 |        1 |       --- |             --- |
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.008 |      0.006 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.014 |       0.008 |      0.006 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.066 |       0.058 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |

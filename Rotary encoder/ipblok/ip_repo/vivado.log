@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Jan  5 13:31:34 2021
+# Process ID: 21824
+# Current directory: E:/school/EOS/Opdracht/EOS/Rotary encoder/ipblok/ip_repo
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13472 E:\school\EOS\Opdracht\EOS\Rotary encoder\ipblok\ip_repo\edit_my_rotary_en_v1_0.xpr
+# Log file: E:/school/EOS/Opdracht/EOS/Rotary encoder/ipblok/ip_repo/vivado.log
+# Journal file: E:/school/EOS/Opdracht/EOS/Rotary encoder/ipblok/ip_repo\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/school/EOS/Opdracht/EOS/Rotary encoder/ipblok/ip_repo/edit_my_rotary_en_v1_0.xpr}
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/school/EOS/Opdracht/EOS/eFPGA/FinalProject/ip_repo/my_rotary_en_1.0/hdl/my_rotary_en_v1_0_S00_AXI.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/school/EOS/Opdracht/EOS/eFPGA/FinalProject/ip_repo/my_rotary_en_1.0/hdl/my_rotary_en_v1_0.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/school/EOS/Opdracht/EOS/eFPGA/FinalProject/ip_repo/my_rotary_en_1.0/component.xml'.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/cyril'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/cyril knops/AppData/Roaming/Xilinx/Vivado/knops/AppData/Roaming/Xilinx/Vivado/2019.2/xhub/board_store'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'E:/school/EOS/Opdracht/EOS/eFPGA/FinalProject/ip_repo/my_rotary_en_1.0'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'E:/school/EOS/Opdracht/EOS/eFPGA/FinalProject/ip_repo/my_rotary_encoder_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'e:/school/EOS/Opdracht/EOS/eFPGA/FinalProject/ip_repo/my_rotary_en_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'e:/school/EOS/Opdracht/EOS/eFPGA/FinalProject/ip_repo/my_rotary_encoder_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  5 13:31:56 2021...

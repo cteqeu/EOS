@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg225-1
 
@@ -85,10 +84,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/Ferre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part em.avnet.com:minized:part0:1.2 [current_project]
-set_property ip_repo_paths {
-  {e:/school/EOS/Opdracht/EOS/Rotary encoder/ipblok/ip_repo}
-  e:/school/EOS/Opdracht/EOS/LEDmatrix_ipblok/ip_repo
-} [current_project]
+set_property ip_repo_paths e:/school/EOS/Opdracht/EOS/ip_repo [current_project]
 update_ip_catalog
 set_property ip_output_repo e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -98,15 +94,15 @@ read_vhdl -library xil_defaultlib E:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.s
 add_files E:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all e:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all E:/school/EOS/Opdracht/EOS/Game_EOS/Game_EOS.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
