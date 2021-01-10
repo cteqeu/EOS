@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1.1 (64-bit)
+# SW Build 2960000 on Wed Aug  5 22:57:20 MDT 2020
+# IP Build 2956692 on Thu Aug  6 01:41:30 MDT 2020
+# Start of session at: Sun Jan 10 19:30:40 2021
+# Process ID: 18148
+# Current directory: C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/Game_EOS.runs/impl_1
+# Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/Game_EOS.runs/impl_1/design_1_wrapper.vdi
+# Journal file: C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/Game_EOS.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

@@ -11,3 +11,21 @@ timestamp=[2021-01-05 14:29:29], mode=WORKBENCH_START, duration=0:00:04.128, dur
 timestamp=[2021-01-05 14:29:30], mode=WORKBENCH_UI_INIT, duration=0:00:00.512, duration_ms=512, data={editors_count=0, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
 timestamp=[2021-01-05 14:29:33], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.042, duration_ms=3042, data={}
 timestamp=[2021-01-05 14:30:57], mode=APP_CREATION, duration=0:00:24.744, duration_ms=24744, data={name=Game_EOS, project_type=sdk, os=freertos10_xilinx, processor=ps7_cortexa9, runtime=cpp, platform=E:\school\EOS\Opdracht\EOS\Game_EOS\Game_EOS\export\Game_EOS\Game_EOS.xpfm, application_type=application}
+timestamp=[2021-01-10 19:37:03], mode=WORKBENCH_START, duration=0:00:04.898, duration_ms=4898, data={}
+timestamp=[2021-01-10 19:37:04], mode=WORKBENCH_UI_INIT, duration=0:00:00.339, duration_ms=339, data={editors_count=0, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2021-01-10 19:37:07], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.000, duration_ms=3000, data={}
+timestamp=[2021-01-10 19:39:24], mode=APP_CREATION, duration=0:00:32.324, duration_ms=32324, data={name=EOS_Game, project_type=sdk, os=freertos10_xilinx, processor=ps7_cortexa9, runtime=cpp, platform=wrapper_cyril, application_type=application}
+timestamp=[2021-01-10 19:40:38], mode=PLATFORM_GENERATION, duration=0:00:31.502, duration_ms=31502, data={name=wrapper_cyril}
+timestamp=[2021-01-10 19:40:39], mode=BUILD, duration=0:00:00.740, duration_ms=740, data={name=EOS_Game, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:40:44], mode=BUILD, duration=0:00:05.126, duration_ms=5126, data={name=EOS_Game_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:41:06], mode=BUILD, duration=0:00:00.168, duration_ms=168, data={name=EOS_Game, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:46:35], mode=APP_CREATION, duration=0:00:29.189, duration_ms=29189, data={name=Game, project_type=sdk, os=freertos10_xilinx, processor=ps7_cortexa9, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2021-01-10 19:48:04], mode=PLATFORM_GENERATION, duration=0:00:16.171, duration_ms=16171, data={name=design_1_wrapper}
+timestamp=[2021-01-10 19:48:36], mode=PLATFORM_GENERATION, duration=0:00:12.207, duration_ms=12207, data={name=design_1_wrapper}
+timestamp=[2021-01-10 19:48:36], mode=BUILD, duration=0:00:00.501, duration_ms=501, data={name=Game, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:48:38], mode=BUILD, duration=0:00:01.368, duration_ms=1368, data={name=Game_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:52:35], mode=PLATFORM_GENERATION, duration=0:00:10.535, duration_ms=10535, data={name=design_1_wrapper}
+timestamp=[2021-01-10 19:52:36], mode=BUILD, duration=0:00:00.442, duration_ms=442, data={name=Game, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:52:37], mode=BUILD, duration=0:00:01.355, duration_ms=1355, data={name=Game_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:55:17], mode=BUILD, duration=0:00:00.182, duration_ms=182, data={name=EOS_Game, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 19:55:22], mode=BUILD, duration=0:00:04.933, duration_ms=4933, data={name=EOS_Game_system, configuration=Debug, clean_build=false}
