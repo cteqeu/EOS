@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="EOS_G" location="C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_G" platform="C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/old_wrapper_new_project/export/old_wrapper_new_project/old_wrapper_new_project.xpfm" platformUID="xilinx:minized::0.0(custom)" systemProject="EOS_G_system" sysConfig="old_wrapper_new_project" runtime="cpp" cpu="domain_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="freertos10_xilinx" mssSignature="449dbda3631410ad1996dc8f55117ec7">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.517591011">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1913855423" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="freertos_hello_world"/>
+</sdkproject:SdkProject>

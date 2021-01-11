@@ -29,3 +29,138 @@ timestamp=[2021-01-10 19:52:36], mode=BUILD, duration=0:00:00.442, duration_ms=4
 timestamp=[2021-01-10 19:52:37], mode=BUILD, duration=0:00:01.355, duration_ms=1355, data={name=Game_system, configuration=Debug, clean_build=false}
 timestamp=[2021-01-10 19:55:17], mode=BUILD, duration=0:00:00.182, duration_ms=182, data={name=EOS_Game, configuration=Debug, clean_build=false}
 timestamp=[2021-01-10 19:55:22], mode=BUILD, duration=0:00:04.933, duration_ms=4933, data={name=EOS_Game_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 20:31:21], mode=APP_CREATION, duration=0:00:25.563, duration_ms=25563, data={name=EOS_G, project_type=sdk, os=freertos10_xilinx, processor=ps7_cortexa9, runtime=cpp, platform=old_wrapper_new_project, application_type=application}
+timestamp=[2021-01-10 20:32:39], mode=PLATFORM_GENERATION, duration=0:00:16.870, duration_ms=16870, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:32:40], mode=BUILD, duration=0:00:00.549, duration_ms=549, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 20:33:47], mode=PLATFORM_GENERATION, duration=0:00:02.301, duration_ms=2301, data={name=wrapper_cyril}
+timestamp=[2021-01-10 20:33:52], mode=BUILD, duration=0:00:00.437, duration_ms=437, data={name=EOS_Game, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 20:37:45], mode=BUILD, duration=0:00:00.367, duration_ms=367, data={name=EOS_Game, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 20:38:17], mode=PLATFORM_GENERATION, duration=0:00:15.077, duration_ms=15077, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:38:18], mode=BUILD, duration=0:00:00.566, duration_ms=566, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 20:52:41], mode=PLATFORM_GENERATION, duration=0:00:12.284, duration_ms=12284, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:52:42], mode=BUILD, duration=0:00:00.557, duration_ms=557, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 20:54:01], mode=PLATFORM_GENERATION, duration=0:00:16.814, duration_ms=16814, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:54:39], mode=PLATFORM_GENERATION, duration=0:00:15.453, duration_ms=15453, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:54:40], mode=BUILD, duration=0:00:00.636, duration_ms=636, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 20:55:00], mode=PLATFORM_GENERATION, duration=0:00:02.277, duration_ms=2277, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:57:45], mode=PLATFORM_GENERATION, duration=0:00:22.542, duration_ms=22542, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:58:41], mode=PLATFORM_GENERATION, duration=0:00:25.707, duration_ms=25707, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 20:59:06], mode=PLATFORM_GENERATION, duration=0:00:02.896, duration_ms=2896, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 21:01:04], mode=PLATFORM_GENERATION, duration=0:00:28.551, duration_ms=28551, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:27:24], mode=PLATFORM_GENERATION, duration=0:00:18.860, duration_ms=18860, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:27:25], mode=BUILD, duration=0:00:00.753, duration_ms=753, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 23:27:42], mode=PLATFORM_GENERATION, duration=0:00:16.816, duration_ms=16816, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:28:27], mode=PLATFORM_GENERATION, duration=0:00:17.120, duration_ms=17120, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:28:28], mode=BUILD, duration=0:00:00.612, duration_ms=612, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 23:28:52], mode=PLATFORM_GENERATION, duration=0:00:01.771, duration_ms=1771, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:29:19], mode=PLATFORM_GENERATION, duration=0:00:22.957, duration_ms=22957, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:30:22], mode=PLATFORM_GENERATION, duration=0:00:22.001, duration_ms=22001, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:30:23], mode=BUILD, duration=0:00:00.756, duration_ms=756, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 23:31:19], mode=PLATFORM_GENERATION, duration=0:00:22.631, duration_ms=22631, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:31:20], mode=BUILD, duration=0:00:00.864, duration_ms=864, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-10 23:33:11], mode=PLATFORM_GENERATION, duration=0:00:18.861, duration_ms=18861, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:34:04], mode=PLATFORM_GENERATION, duration=0:00:23.010, duration_ms=23010, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:35:13], mode=BUILD, duration=0:00:00.197, duration_ms=197, data={name=EOS_G, configuration=Debug, clean_build=true}
+timestamp=[2021-01-10 23:35:15], mode=PLATFORM_GENERATION, duration=0:00:02.188, duration_ms=2188, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:35:47], mode=PLATFORM_GENERATION, duration=0:00:31.973, duration_ms=31973, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:37:53], mode=PLATFORM_GENERATION, duration=0:00:15.641, duration_ms=15641, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:40:50], mode=PLATFORM_GENERATION, duration=0:00:21.921, duration_ms=21921, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:41:34], mode=PLATFORM_GENERATION, duration=0:00:21.457, duration_ms=21457, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:42:40], mode=PLATFORM_GENERATION, duration=0:00:21.442, duration_ms=21442, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:46:02], mode=PLATFORM_GENERATION, duration=0:00:01.855, duration_ms=1855, data={name=old_wrapper_new_project}
+timestamp=[2021-01-10 23:48:51], mode=PLATFORM_GENERATION, duration=0:00:29.465, duration_ms=29465, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:06:20], mode=PLATFORM_GENERATION, duration=0:00:43.004, duration_ms=43004, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:07:30], mode=PLATFORM_GENERATION, duration=0:00:25.955, duration_ms=25955, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:10:10], mode=PLATFORM_GENERATION, duration=0:00:27.480, duration_ms=27480, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:12:20], mode=PLATFORM_GENERATION, duration=0:00:30.681, duration_ms=30681, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:46:26], mode=PLATFORM_GENERATION, duration=0:00:39.848, duration_ms=39848, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:47:42], mode=PLATFORM_GENERATION, duration=0:00:40.211, duration_ms=40211, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:48:18], mode=PLATFORM_GENERATION, duration=0:00:07.065, duration_ms=7065, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:50:08], mode=PLATFORM_GENERATION, duration=0:01:26.946, duration_ms=86946, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 10:55:52], mode=WORKBENCH_START, duration=0:00:44.082, duration_ms=44082, data={}
+timestamp=[2021-01-11 10:55:53], mode=WORKBENCH_UI_INIT, duration=0:00:00.783, duration_ms=783, data={editors_count=10, platform_editors_count=7, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=EOS_G,EOS_G_system,RemoteSystemsTempFiles,old_wrapper_new_project}
+timestamp=[2021-01-11 10:55:58], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.129, duration_ms=129, data={}
+timestamp=[2021-01-11 10:56:33], mode=BUILD, duration=0:00:04.387, duration_ms=4387, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 10:56:54], mode=BUILD, duration=0:00:20.257, duration_ms=20257, data={name=EOS_G_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 10:57:49], mode=BUILD, duration=0:00:00.672, duration_ms=672, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 10:58:01], mode=BUILD, duration=0:00:11.546, duration_ms=11546, data={name=EOS_G_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 10:59:25], mode=BUILD, duration=0:00:00.755, duration_ms=755, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 10:59:35], mode=BUILD, duration=0:00:09.638, duration_ms=9638, data={name=EOS_G_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 11:04:45], mode=PLATFORM_GENERATION, duration=0:00:20.222, duration_ms=20222, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 11:06:52], mode=PLATFORM_GENERATION, duration=0:01:50.076, duration_ms=110076, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 11:06:57], mode=BUILD, duration=0:00:04.947, duration_ms=4947, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 11:07:15], mode=BUILD, duration=0:00:17.620, duration_ms=17620, data={name=EOS_G_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 11:09:16], mode=BUILD, duration=0:00:00.308, duration_ms=308, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 11:56:02], mode=BUILD, duration=0:00:00.394, duration_ms=394, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:02:31], mode=WORKBENCH_START, duration=0:00:15.432, duration_ms=15432, data={}
+timestamp=[2021-01-11 12:02:31], mode=WORKBENCH_UI_INIT, duration=0:00:00.526, duration_ms=526, data={editors_count=11, platform_editors_count=7, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=EOS_G,EOS_G_system,RemoteSystemsTempFiles,old_wrapper_new_project}
+timestamp=[2021-01-11 12:02:32], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.085, duration_ms=85, data={}
+timestamp=[2021-01-11 12:02:51], mode=BUILD, duration=0:00:00.348, duration_ms=348, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:03:04], mode=BUILD, duration=0:00:12.434, duration_ms=12434, data={name=EOS_G_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:06:05], mode=BUILD, duration=0:00:00.233, duration_ms=233, data={name=EOS_G, configuration=Debug, clean_build=true}
+timestamp=[2021-01-11 12:09:21], mode=PLATFORM_GENERATION, duration=0:00:02.484, duration_ms=2484, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 12:09:32], mode=BUILD, duration=0:00:01.475, duration_ms=1475, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:09:40], mode=BUILD, duration=0:00:06.454, duration_ms=6454, data={name=EOS_G_system, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:24:22], mode=BUILD, duration=0:00:01.187, duration_ms=1187, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:26:54], mode=BUILD, duration=0:00:01.082, duration_ms=1082, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:28:45], mode=BUILD, duration=0:00:01.025, duration_ms=1025, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:31:45], mode=BUILD, duration=0:00:01.187, duration_ms=1187, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:40:00], mode=BUILD, duration=0:00:01.410, duration_ms=1410, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:41:44], mode=BUILD, duration=0:00:00.405, duration_ms=405, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:44:47], mode=WORKBENCH_START, duration=0:00:14.120, duration_ms=14120, data={}
+timestamp=[2021-01-11 12:44:47], mode=WORKBENCH_UI_INIT, duration=0:00:00.426, duration_ms=426, data={editors_count=12, platform_editors_count=8, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=EOS_G,EOS_G_system,RemoteSystemsTempFiles,old_wrapper_new_project}
+timestamp=[2021-01-11 12:44:48], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.072, duration_ms=72, data={}
+timestamp=[2021-01-11 12:48:09], mode=PLATFORM_GENERATION, duration=0:00:10.200, duration_ms=10200, data={name=old_wrapper_new_project}
+timestamp=[2021-01-11 12:48:13], mode=BUILD, duration=0:00:00.856, duration_ms=856, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:48:47], mode=BUILD, duration=0:00:00.886, duration_ms=886, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:49:05], mode=BUILD, duration=0:00:00.758, duration_ms=758, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:58:01], mode=BUILD, duration=0:00:00.539, duration_ms=539, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 12:58:51], mode=BUILD, duration=0:00:00.977, duration_ms=977, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:00:53], mode=BUILD, duration=0:00:01.020, duration_ms=1020, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:01:47], mode=BUILD, duration=0:00:00.989, duration_ms=989, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:02:41], mode=BUILD, duration=0:00:00.962, duration_ms=962, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:33:59], mode=BUILD, duration=0:00:00.967, duration_ms=967, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:39:29], mode=BUILD, duration=0:00:01.022, duration_ms=1022, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:40:41], mode=BUILD, duration=0:00:01.161, duration_ms=1161, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:54:10], mode=BUILD, duration=0:00:00.523, duration_ms=523, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:55:25], mode=BUILD, duration=0:00:00.551, duration_ms=551, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:55:46], mode=BUILD, duration=0:00:00.534, duration_ms=534, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:56:04], mode=BUILD, duration=0:00:00.515, duration_ms=515, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:56:39], mode=BUILD, duration=0:00:00.971, duration_ms=971, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:58:45], mode=BUILD, duration=0:00:00.547, duration_ms=547, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 13:59:54], mode=BUILD, duration=0:00:00.526, duration_ms=526, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:00:43], mode=BUILD, duration=0:00:01.413, duration_ms=1413, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:01:44], mode=BUILD, duration=0:00:01.087, duration_ms=1087, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:11:05], mode=BUILD, duration=0:00:00.685, duration_ms=685, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:11:54], mode=BUILD, duration=0:00:00.521, duration_ms=521, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:12:33], mode=BUILD, duration=0:00:00.467, duration_ms=467, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:12:48], mode=BUILD, duration=0:00:00.471, duration_ms=471, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:13:03], mode=BUILD, duration=0:00:00.964, duration_ms=964, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:14:31], mode=BUILD, duration=0:00:00.949, duration_ms=949, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:17:29], mode=BUILD, duration=0:00:00.957, duration_ms=957, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:18:41], mode=BUILD, duration=0:00:00.971, duration_ms=971, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:20:21], mode=BUILD, duration=0:00:00.948, duration_ms=948, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:25:21], mode=BUILD, duration=0:00:01.086, duration_ms=1086, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:28:13], mode=BUILD, duration=0:00:00.519, duration_ms=519, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:28:26], mode=BUILD, duration=0:00:00.954, duration_ms=954, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:30:25], mode=BUILD, duration=0:00:01.019, duration_ms=1019, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:33:50], mode=BUILD, duration=0:00:01.023, duration_ms=1023, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:35:10], mode=BUILD, duration=0:00:01.021, duration_ms=1021, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:35:51], mode=BUILD, duration=0:00:00.970, duration_ms=970, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:38:37], mode=BUILD, duration=0:00:00.530, duration_ms=530, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:38:55], mode=BUILD, duration=0:00:00.530, duration_ms=530, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:40:04], mode=BUILD, duration=0:00:00.966, duration_ms=966, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:47:51], mode=BUILD, duration=0:00:01.234, duration_ms=1234, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:51:01], mode=BUILD, duration=0:00:00.682, duration_ms=682, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:51:10], mode=BUILD, duration=0:00:00.587, duration_ms=587, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:51:46], mode=BUILD, duration=0:00:01.027, duration_ms=1027, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:52:30], mode=BUILD, duration=0:00:01.093, duration_ms=1093, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:53:00], mode=BUILD, duration=0:00:00.648, duration_ms=648, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 14:53:16], mode=BUILD, duration=0:00:01.156, duration_ms=1156, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 15:21:26], mode=BUILD, duration=0:00:01.150, duration_ms=1150, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 15:22:35], mode=BUILD, duration=0:00:01.016, duration_ms=1016, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 15:23:47], mode=BUILD, duration=0:00:01.150, duration_ms=1150, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 15:25:00], mode=BUILD, duration=0:00:01.161, duration_ms=1161, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 15:28:20], mode=BUILD, duration=0:00:00.712, duration_ms=712, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 15:30:38], mode=BUILD, duration=0:00:01.181, duration_ms=1181, data={name=EOS_G, configuration=Debug, clean_build=false}
+timestamp=[2021-01-11 15:31:42], mode=BUILD, duration=0:00:01.173, duration_ms=1173, data={name=EOS_G, configuration=Debug, clean_build=false}

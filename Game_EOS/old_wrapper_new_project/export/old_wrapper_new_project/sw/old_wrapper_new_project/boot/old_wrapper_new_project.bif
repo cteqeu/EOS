@@ -1,0 +1,7 @@
+/*old_wrapper_new_project*/
+the_ROM_image:
+{
+  [bootloader]<old_wrapper_new_project/boot/fsbl.elf>
+   <bitstream> 
+  <elf,ps7_cortexa9_0>
+}

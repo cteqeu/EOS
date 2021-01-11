@@ -1,16 +1,24 @@
-Nothing to build in platform 'wrapper_cyril'
+Nothing to build in platform 'old_wrapper_new_project'
 
-19:55:17 **** Incremental Build of configuration Debug for project EOS_Game ****
+15:31:41 **** Incremental Build of configuration Debug for project EOS_G ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
-19:55:17 **** Incremental Build of configuration Debug for project EOS_Game_system ****
-make all 
-Generating bif file for the system project
-generate_system_bif.bat 52630 C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/wrapper_cyril/export/wrapper_cyril/wrapper_cyril.xpfm domain_ps7_cortexa9_0 C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_Game_system/Debug/system.bif
-sdcard_gen --xpfm C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/wrapper_cyril/export/wrapper_cyril/wrapper_cyril.xpfm --sys_config wrapper_cyril --bif C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_Game_system/Debug/system.bif --bitstream C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_Game/_ide/bitstream/wrapper_cyril.bit --elf C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_Game/Debug/EOS_Game.elf,ps7_cortexa9_0
-creating BOOT.BIN using C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_Game/_ide/bitstream/wrapper_cyril.bit
-Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_Game_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+'Building file: ../src/freertos_hello_world.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/freertos_hello_world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/old_wrapper_new_project/export/old_wrapper_new_project/sw/old_wrapper_new_project/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/freertos_hello_world.d" -MT"src/freertos_hello_world.o" -o "src/freertos_hello_world.o" "../src/freertos_hello_world.c"
+'Finished building: ../src/freertos_hello_world.c'
+' '
+'Building target: EOS_G.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/old_wrapper_new_project/export/old_wrapper_new_project/sw/old_wrapper_new_project/domain_ps7_cortexa9_0/bsplib/lib -o "EOS_G.elf"  ./src/freertos_hello_world.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: EOS_G.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size EOS_G.elf  |tee "EOS_G.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  74144	   3352	  88800	 166296	  28998	EOS_G.elf
+'Finished building: EOS_G.elf.size'
+' '

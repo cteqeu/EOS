@@ -1,0 +1,279 @@
+/* FreeRTOS includes. */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+
+/* Xilinx includes. */
+#include "xil_printf.h"
+#include "xparameters.h"
+#include <stdio.h>
+#include <stdlib.h>
+//#include "platform.h"
+#include "xgpiops.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+#include "xplatform_info.h"
+#include <xil_printf.h>
+#include "sleep.h"
+/* drivers */
+#include "MATRIX_IPBLOK_DEF.h"
+#include "my_rotary_en.h"
+
+#define TIMER_ID	1
+#define DELAY_10_SECONDS	10000UL
+#define DELAY_1_SECOND		1000UL
+#define DELAY_500_MSECOND	500UL
+#define DELAY_100_MSECOND	100UL
+#define DELAY_4_MSECOND		0UL
+#define DELAY_10_MSECOND	10UL
+#define TIMER_CHECK_THRESHOLD	9
+
+static void prvInput( void *pvParameters );
+static void prvOutput( void *pvParameters );
+
+static TaskHandle_t xSend;
+static TaskHandle_t xReceive;
+
+static QueueHandle_t xQueueNumber = NULL;
+static QueueHandle_t xQueueLedStatus = NULL;
+
+static TimerHandle_t xTimer1 = NULL;
+static void timer( TimerHandle_t pxTimer1 );
+
+static u32 Input_Pin = 0u; /* Switch button */
+static u32 Output_Pin_R = 52u;
+static u32 Output_Pin_G = 53u;
+XGpioPs Gpio;
+
+static void printMatrix(u8 *number);
+static void dropBall(u8 *number);
+static void setStatusLed(u8 *status);
+int Score = 0;
+int OldScore = 1;
+int main( void )
+{
+	XGpioPs_Config *GPIOConfigPtr;
+	GPIOConfigPtr = XGpioPs_LookupConfig(XPAR_PS7_GPIO_0_DEVICE_ID);
+	XGpioPs_CfgInitialize(&Gpio, GPIOConfigPtr,GPIOConfigPtr->BaseAddr);
+
+	xil_printf("Game\n\r");
+	XGpioPs_SetDirectionPin(&Gpio, Input_Pin, 0x0);
+
+	/* Set the direction for the Red LED pin to be output. */
+	XGpioPs_SetDirectionPin(&Gpio, Output_Pin_R, 1u);
+	XGpioPs_SetOutputEnablePin(&Gpio, Output_Pin_R, 1u);
+	XGpioPs_WritePin(&Gpio, Output_Pin_R, 0x0);
+
+	/* Set the direction for the Green LED pin to be output. */
+	XGpioPs_SetDirectionPin(&Gpio, Output_Pin_G, 1u);
+	XGpioPs_SetOutputEnablePin(&Gpio, Output_Pin_G, 1u);
+	XGpioPs_WritePin(&Gpio, Output_Pin_G, 0x0);
+
+    //TAskS
+	xTaskCreate( prvInput, 	( const char * ) "Input", 	configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, &xSend );
+	xTaskCreate( prvOutput,( const char * ) "Output", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, &xReceive );
+
+	const TickType_t x1second 	= pdMS_TO_TICKS( DELAY_1_SECOND );
+	xTimer1 = xTimerCreate( (const char *) "Timer1",	x1seconds,	pdFALSE, (void *) TIMER_ID,	vTimer1);
+
+	//QUEUES
+	xQueueNumber =  xQueueCreate	( 	1, sizeof( u8 ) );		// Queue with U32					// 1 = queue length
+	xQueueLedStatus = xQueueCreate	( 	1, sizeof( u8 ) );	// Queue with Char value
+	configASSERT( xQueueNumber );
+	configASSERT( xQueueLedStatus );
+
+	vTaskStartScheduler();
+
+	for( ;; );
+}
+
+
+/*-----------------------------------------------------------*/
+static void prvInput( void *pvParameters )
+{
+	int counter = 0;
+	int oldCounter = counter;
+	u8 position = 0;
+	u8 ledStatus = 0;
+	int answer =0;
+	int lastState = 0;
+	int buttonState = 0;
+
+	for( ;; )
+	{
+		counter = MY_ROTARY_EN_mReadReg (XPAR_MY_ROTARY_EN_0_S00_AXI_BASEADDR, MY_ROTARY_EN_S00_AXI_SLV_REG3_OFFSET);
+		//xil_printf("rot is %d\n\r",counter);
+				if(counter/4 > oldCounter/4)
+				{
+					//gaat naar rechts
+					if(position < 7){
+						position++;
+					}
+				}
+				else if(counter/4 < oldCounter/4)
+				{
+					//gaat naar links
+					if(position > 1){
+						position--;
+					}
+				}
+		oldCounter = counter;
+
+		xQueueSend( xQueueNumber,	&position, 	0UL );
+
+		buttonState = XGpioPs_ReadPin(&Gpio, Input_Pin);
+		if(buttonState != lastState){
+			if(XGpioPs_ReadPin(&Gpio, Input_Pin)== 1){
+				answer = rand() % 10;
+				if(answer == position){
+					ledStatus = 1;
+					xil_printf("good job! the answer is %d\n\rand youre answer was %d\n\r", (int) answer,(int)position);
+				}else
+				{
+					ledStatus = 2;
+					xil_printf("Wrong, the answer is %d\n\ryoure answer was %d\n\r", (int) answer,(int)position);
+				}
+
+			}
+		}
+		xQueueSend( xQueueLedStatus,	&ledStatus, 	0UL );
+		lastState = buttonState;
+
+		/*int test = XGpioPs_ReadPin(&Gpio, Input_Pin);
+		xil_printf("test %d\n\r", (int) test);
+		ledStatus = 2;*/
+	}
+}
+
+static void prvOutput( void *pvParameters )
+{
+	u8 RecvDataNumber;
+	u8 RecvDataLedStatus;
+	u8 lastData;
+	for( ;; )
+	{
+		//xil_printf("task 2\n\r");
+		xQueueReceive( 	xQueueLedStatus,	&RecvDataLedStatus,	portMAX_DELAY );
+		xQueueReceive( 	xQueueNumber,	&RecvDataNumber,	portMAX_DELAY );
+		printMatrix(&RecvDataNumber);
+		if(RecvDataNumber != lastData){
+
+			lastData = RecvDataNumber;
+			xil_printf("last data: %d\n\r",RecvDataNumber);
+		}
+
+		setStatusLed(&RecvDataLedStatus);
+	}
+}
+
+static void timer( TimerHandle_t pxTimer){
+	u8 RecvDataNumber;
+	xQueueReceive( 	xQueueNumber,	&RecvDataNumber,	portMAX_DELAY );
+	dropBall(&RecvDataNumber);
+}
+
+static void dropBall(u8 *number){
+	int xPos = 0;
+	int yPos = 0;
+	if(Score != OldScore){
+		xPos = rand() % 8 + 1;
+
+	}
+	xil_printf("Ball_pos %d:%d\n\r",xPos,yPos);
+	if(yPos >= 8){
+		if(number == xPos || number+1 == xPos ){
+			Score++;
+		}else{
+			Score--;
+		}
+		OldScore = Score;
+	}else{
+		yPos++;
+	}
+}
+
+static void printMatrix(u8 *number){
+	const TickType_t x10msecond = pdMS_TO_TICKS( DELAY_10_MSECOND );
+	const TickType_t x4msecond = pdMS_TO_TICKS( DELAY_4_MSECOND );
+	//xil_printf("%d",*number);
+	switch(*number)
+		{																												  /*KRRKRKKKKRRKRKRR*/
+		case 0:																										 	  /*7768463515348221*/
+			//xil_printf("0\n\r");
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0000000000000000);
+			break;
+
+		case 1:
+			//xil_printf("1\n\r");
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110100011100111);
+			vTaskDelay(x4msecond);
+			break;
+
+		case 2:
+			//xil_printf("2\n\r");
+            MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110101001100111);
+			vTaskDelay(x4msecond);
+			break;
+
+		case 3:
+			//xil_printf("3\n\r");
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110101001110011);
+			break;
+
+		case 4:
+			//xil_printf("4\n\r");
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110100101110011);
+			break;
+
+		case 5:
+			//xil_printf("5\n\r");
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110110101100011);
+			break;
+
+		case 6:
+			//xil_printf("6\n\r");
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b1110110001100011);
+			break;
+
+		case 7:
+			//xil_printf("7\n\r");
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b1111100001100011);
+			break;
+		default:
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0000001000001001);
+			vTaskDelay(x10msecond);
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110100001101011);
+			vTaskDelay(x4msecond);
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0010100001111001);
+			vTaskDelay(x10msecond);
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110100001101011);
+			vTaskDelay(x4msecond);
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0010100101101001);
+			vTaskDelay(x10msecond);
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110100001101011);
+			vTaskDelay(x4msecond);
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0000010000001001);
+			vTaskDelay(x10msecond);
+			MATRIX_IPBLOK_DEF_mWriteReg(XPAR_MATRIX_IPBLOK_DEF_0_S00_AXI_BASEADDR,MATRIX_IPBLOK_DEF_S00_AXI_SLV_REG0_OFFSET,0b0110100001101011);
+			vTaskDelay(x4msecond);
+			break;
+		}
+}
+
+static void setStatusLed(u8 *status){
+	switch(*status){
+	case 0:
+		XGpioPs_WritePin(&Gpio, Output_Pin_R, 0x0);
+		XGpioPs_WritePin(&Gpio, Output_Pin_G, 0x0);
+		break;
+	case 1:
+		XGpioPs_WritePin(&Gpio, Output_Pin_R, 0x0);
+		XGpioPs_WritePin(&Gpio, Output_Pin_G, 0x1);
+		break;
+	case 2:
+		XGpioPs_WritePin(&Gpio, Output_Pin_R, 0x1);
+		XGpioPs_WritePin(&Gpio, Output_Pin_G, 0x0);
+		break;
+	}
+}

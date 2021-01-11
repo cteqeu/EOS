@@ -1,7 +1,0 @@
-/*wrapper_cyril*/
-the_ROM_image:
-{
-  [bootloader]<wrapper_cyril/boot/fsbl.elf>
-   <bitstream> 
-  <elf,ps7_cortexa9_0>
-}

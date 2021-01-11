@@ -1,10 +1,18 @@
-19:55:17 **** Incremental Build of configuration Debug for project EOS_Game ****
+20:37:45 **** Incremental Build of configuration Debug for project EOS_Game ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
+'Building file: ../src/freertos_hello_world.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/freertos_hello_world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/wrapper_cyril/export/wrapper_cyril/sw/wrapper_cyril/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/freertos_hello_world.d" -MT"src/freertos_hello_world.o" -o "src/freertos_hello_world.o" "../src/freertos_hello_world.c"
+../src/freertos_hello_world.c:22:10: fatal error: Matrix_0.h: No such file or directory
+   22 | #include "Matrix_0.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+'Finished building: ../src/freertos_hello_world.c'
+' '
 
-19:55:17 Build Finished (took 170ms)
+20:37:45 Build Finished (took 355ms)
 
