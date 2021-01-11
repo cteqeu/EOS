@@ -59,7 +59,7 @@ int PaddelPos = 0;
 int main( void )
 {
 	XGpioPs_Config *GPIOConfigPtr;
-    GPIOConfigPtr = XGpioPs_LookupConfig(XPAR_PS7_GPIO_0_DEVICE_ID);
+	GPIOConfigPtr = XGpioPs_LookupConfig(XPAR_PS7_GPIO_0_DEVICE_ID);
 	XGpioPs_CfgInitialize(&Gpio, GPIOConfigPtr,GPIOConfigPtr->BaseAddr);
 
 	xil_printf("Game\n\r");

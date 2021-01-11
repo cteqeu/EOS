@@ -1,4 +1,4 @@
-15:31:41 **** Incremental Build of configuration Debug for project EOS_G ****
+15:36:25 **** Incremental Build of configuration Debug for project EOS_G ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -21,5 +21,5 @@ arm-none-eabi-size EOS_G.elf  |tee "EOS_G.elf.size"
 'Finished building: EOS_G.elf.size'
 ' '
 
-15:31:42 Build Finished (took 1s.145ms)
+15:36:26 Build Finished (took 1s.265ms)
 

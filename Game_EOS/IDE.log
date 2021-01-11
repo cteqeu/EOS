@@ -2921,3 +2921,50 @@ con
 
 15:30:55 INFO  : Launch script is exported to file 'C:\Users\cyril\EOS\Eindoefening\EOS\Game_EOS\.sdk\launch_scripts\single_application_debug\debugger_eos_g-default.tcl'
 15:31:41 INFO  : Checking for BSP changes to sync application flags for project 'EOS_G'...
+15:31:46 INFO  : Disconnected from the channel tcfchan#33.
+15:31:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:31:48 INFO  : Jtag cable 'Avnet MiniZed V1 1234-oj1A' is selected.
+15:31:48 INFO  : 'jtag frequency' command is executed.
+15:31:48 INFO  : Context for 'APU' is selected.
+15:31:48 INFO  : System reset is completed.
+15:31:51 INFO  : 'after 3000' command is executed.
+15:31:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Avnet MiniZed V1 1234-oj1A" && level==0 && jtag_device_ctx=="jsn-MiniZed V1-1234-oj1A-13723093-0"}' command is executed.
+15:31:52 INFO  : FPGA configured successfully with bitstream "C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_G/_ide/bitstream/old_wrapper_new_project.bit"
+15:31:52 INFO  : Context for 'APU' is selected.
+15:31:52 INFO  : Hardware design and registers information is loaded from 'C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/old_wrapper_new_project/export/old_wrapper_new_project/hw/old_wrapper_new_project.xsa'.
+15:31:52 INFO  : 'configparams force-mem-access 1' command is executed.
+15:31:52 INFO  : Context for 'APU' is selected.
+15:31:52 INFO  : Sourcing of 'C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_G/_ide/psinit/ps7_init.tcl' is done.
+15:31:53 INFO  : 'ps7_init' command is executed.
+15:31:53 INFO  : 'ps7_post_config' command is executed.
+15:31:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:31:53 INFO  : The application 'C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_G/Debug/EOS_G.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:31:53 INFO  : 'configparams force-mem-access 0' command is executed.
+15:31:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Avnet MiniZed V1 1234-oj1A" && level==0 && jtag_device_ctx=="jsn-MiniZed V1-1234-oj1A-13723093-0"}
+fpga -file C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_G/_ide/bitstream/old_wrapper_new_project.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/old_wrapper_new_project/export/old_wrapper_new_project/hw/old_wrapper_new_project.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_G/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/cyril/EOS/Eindoefening/EOS/Game_EOS/EOS_G/Debug/EOS_G.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:31:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:31:54 INFO  : 'con' command is executed.
+15:31:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:31:54 INFO  : Launch script is exported to file 'C:\Users\cyril\EOS\Eindoefening\EOS\Game_EOS\.sdk\launch_scripts\single_application_debug\debugger_eos_g-default.tcl'
+15:36:25 INFO  : Checking for BSP changes to sync application flags for project 'EOS_G'...
